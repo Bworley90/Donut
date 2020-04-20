@@ -12,6 +12,7 @@ public class DonutMovement : MonoBehaviour
     #region Private Variables
 
     private Rigidbody2D rb;
+    private Animator anim;
 
     #endregion
 
@@ -35,11 +36,14 @@ public class DonutMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
     {
         Movement();
+        Animations();
+        Jump();
     }
 
     #endregion
@@ -55,6 +59,29 @@ public class DonutMovement : MonoBehaviour
         else if(Input.GetAxisRaw("Horizontal") < 0)
         {
             rb.MovePosition((Vector2)transform.position + Vector2.left * speed * Time.deltaTime);
+        }
+    }
+
+    private void Animations()
+    {
+        anim.SetFloat("xSpeed", Input.GetAxisRaw("Horizontal"));
+    }
+
+
+    private void Jump()
+    {
+        bool canJump;
+        if(rb.velocity.y == 0)
+        {
+            canJump = true;
+        }
+        else
+        {
+            canJump = false;
+        }
+        if(canJump && Input.GetButtonDown("Jump"))
+        {
+            rb.AddForce((Vector2)transform.position + Vector2.up * jumpHeight);
         }
     }
 
