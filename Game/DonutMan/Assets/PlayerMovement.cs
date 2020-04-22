@@ -13,9 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
 
 
-
-    public float gravity;
-
     [Header("Movement")]
     [Tooltip("Max Speed player can go")]
     [SerializeField]
@@ -23,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Tooltip("Jumpheight for player")]
     [SerializeField]
-    private float jumpHeight;
+    private float jumpHeight = 5;
 
 
     #region GroundCheck Variables
@@ -69,12 +66,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void HorizontalMovement()
     {
+        RaycastHit2D temp = Physics2D.Raycast(transform.position - new Vector3(0, 1.5f, 0), Vector3.left, 1.5f, 1 << LayerMask.NameToLayer("Collision"));
+        RaycastHit2D temp2 = Physics2D.Raycast(transform.position - new Vector3(0, 1.5f, 0), Vector3.right, .3f, 1 << LayerMask.NameToLayer("Collision"));
         velocity = Vector3.zero;
-        if (Input.GetAxisRaw("Horizontal") > 0) //Moving Right
+        if (Input.GetAxisRaw("Horizontal") > 0 && !temp2) //Moving Right
         {
             velocity.x = 1;
         }
-        else if (Input.GetAxisRaw("Horizontal") < 0)//Moving Left
+        else if (Input.GetAxisRaw("Horizontal") < 0 && !temp)//Moving Left
         {
             velocity.x = -1;
         }
@@ -86,19 +85,13 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         temp = Physics2D.OverlapBox(groundCheckPlacement + transform.position, groundCheckSize, 0, 1 << LayerMask.NameToLayer("Collision"));
-        if(temp != null)//Grounded
+        if(temp != null)
         {
             grounded = true;
-            Debug.Log("Here");
             if(Input.GetButtonDown("Jump"))
             {
                 rb.AddForce((Vector2)transform.position + Vector2.up * jumpHeight);
-                Debug.Log("hit");
             }
-        }
-        if(temp == null)
-        {
-            print("Null");
         }
     }
 
