@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     
     private Vector3 velocity;
     private Rigidbody2D rb;
+    private Animator anim;
 
 
     [Header("Movement")]
@@ -55,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -62,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         
         HorizontalMovement();
         Jump();
+        MeleeAttack();
     }
 
     private void HorizontalMovement()
@@ -78,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
             velocity.x = -1;
         }
 
-
+        anim.SetFloat("velocityX", velocity.x);
         transform.Translate((Vector3)velocity * maxSpeed * Time.deltaTime);
     }
 
@@ -91,7 +94,22 @@ public class PlayerMovement : MonoBehaviour
             if(Input.GetButtonDown("Jump"))
             {
                 rb.AddForce((Vector2)transform.position + Vector2.up * jumpHeight);
+                anim.SetTrigger("jumped");
+                
             }
+        }
+        else
+        {
+            anim.SetTrigger("landed");
+        }
+        anim.SetFloat("velocityY", velocity.y);
+    }
+
+    private void MeleeAttack()
+    {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            anim.SetTrigger("melee");
         }
     }
 
