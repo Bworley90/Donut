@@ -53,13 +53,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private byte flourBagSpeed;
 
+    private enum PlayerState
+    {
+        facedLeft,
+        facedRight
+    }
 
-
+    private PlayerState ps;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        ps = PlayerState.facedRight;
     }
 
     private void Update()
@@ -78,10 +84,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") > 0 && !temp2) //Moving Right
         {
             velocity.x = 1;
+            ps = PlayerState.facedRight;
         }
         else if (Input.GetAxisRaw("Horizontal") < 0 && !temp)//Moving Left
         {
             velocity.x = -1;
+            ps = PlayerState.facedLeft;
         }
 
         anim.SetFloat("velocityX", velocity.x);
@@ -113,7 +121,17 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Fire1"))
         {
             anim.SetTrigger("melee");
-            GameObject bag = Instantiate(flourBag);
+            GameObject bag = Instantiate(flourBag, transform.position, flourBag.transform.rotation);
+            if (ps == PlayerState.facedRight)
+            {
+                bag.GetComponent<FlourBag>().direction = Vector2.up;
+                bag.GetComponent<SpriteRenderer>().flipY = true;
+            }
+            else
+            {
+                bag.GetComponent<FlourBag>().direction = Vector2.down;
+                
+            }
             
         }
     }
