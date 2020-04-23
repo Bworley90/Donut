@@ -16,7 +16,7 @@ TextureImporter:
     second: donut guy for animation_3
   - first:
       213: 2235131572022009326
-    second: donut guy for animation_4
+    second: FlourBag
   - first:
       213: 3606889524899245012
     second: donut guy for animation_5
@@ -2834,6 +2834,9 @@ TextureImporter:
   - first:
       213: -8998146107600991706
     second: donut guy for animation_943
+  - first:
+      213: 8010696271119194200
+    second: donut guy for animation_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -2955,22 +2958,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: donut guy for animation
+      name: donut guy for animation_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 4000
-        height: 1958
-      alignment: 9
+        y: 958
+        width: 1000
+        height: 1000
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bf837cb98cc80ac0800000000000000
-      internalID: -3888633386290147407
+      spriteID: 8581b9be0d5bb2f60800000000000000
+      internalID: 8010696271119194200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donut guy for animation_1
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 958
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f46ecbd13fef640800000000000000
+      internalID: 5115793535788273420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donut guy for animation_2
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 958
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379816d972614f8f0800000000000000
+      internalID: -507756498586072717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: donut guy for animation_3
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 958
+        width: 1000
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63f800569e3c46890800000000000000
+      internalID: -7465626875084107978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlourBag
+      rect:
+        serializedVersion: 2
+        x: 4080
+        y: 430
+        width: 976
+        height: 1062
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eedd1a09258c40f10800000000000000
+      internalID: 2235131572022009326
       vertices: []
       indices: 
       edges: []

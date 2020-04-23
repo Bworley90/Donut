@@ -48,7 +48,10 @@ public class PlayerMovement : MonoBehaviour
 
     #endregion
 
-
+    [SerializeField]
+    private GameObject flourBag;
+    [SerializeField]
+    private byte flourBagSpeed;
 
 
 
@@ -110,6 +113,8 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetButtonDown("Fire1"))
         {
             anim.SetTrigger("melee");
+            GameObject bag = Instantiate(flourBag);
+            
         }
     }
 
