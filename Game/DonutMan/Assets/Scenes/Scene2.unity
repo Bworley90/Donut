@@ -392,13 +392,8 @@ MonoBehaviour:
   - {fileID: 787149162}
   - {fileID: 1500730861}
   m_Bounds:
-<<<<<<< HEAD
-    m_Center: {x: -6.064721, y: -5.0096226, z: 0}
-    m_Extent: {x: 10.079055, y: 14.802332, z: 0}
-=======
     m_Center: {x: -6.04095, y: -5.0113277, z: 0}
     m_Extent: {x: 10.088145, y: 14.804043, z: 0}
->>>>>>> 21f9c8b5670c4103800b5e18a03c7eb124281da3
   m_UseBatching: 1
 --- !u!212 &553124799
 SpriteRenderer:
@@ -615,11 +610,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763923809}
-<<<<<<< HEAD
-  m_LocalRotation: {x: 0, y: 0, z: 0.95126766, w: -0.30836648}
-=======
-  m_LocalRotation: {x: 0, y: 0, z: 0.9548361, w: -0.2971332}
->>>>>>> 21f9c8b5670c4103800b5e18a03c7eb124281da3
   m_LocalPosition: {x: 2.5895538, y: -6.173771, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
