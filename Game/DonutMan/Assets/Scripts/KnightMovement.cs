@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PixelDonut : MonoBehaviour
+public class KnightMovement : MonoBehaviour
 {
 
     private Rigidbody2D rb;
@@ -25,13 +25,18 @@ public class PixelDonut : MonoBehaviour
     public Vector2 size = new Vector2(5, 5);
     public bool showGroundedBox = true;
 
-
-
+    public enum FacingDirection
+    {
+        right,
+        left
+    }
+    public FacingDirection facingDirection;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        facingDirection = FacingDirection.right;
     }
 
     private void Update()
@@ -47,10 +52,13 @@ public class PixelDonut : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
             direction = Vector2.right;
+            facingDirection = FacingDirection.right;
+
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
             direction = Vector2.left;
+            facingDirection = FacingDirection.left;
         }
         transform.Translate((Vector3)direction * speed * Time.deltaTime);
         anim.SetFloat("velocityX", direction.x);
@@ -70,7 +78,6 @@ public class PixelDonut : MonoBehaviour
             if(Input.GetButtonDown("Jump"))
             {
                 rb.AddForce(transform.position * Vector2.up * jumpHeight, ForceMode2D.Impulse);
-                jumpReady = false;
                 StartCoroutine(DoubleJump());
             }
         }
@@ -101,6 +108,7 @@ public class PixelDonut : MonoBehaviour
     private IEnumerator DoubleJump()
     {
         yield return new WaitForSeconds(.1f);
+        jumpReady = false;
         doubleJumpReady = true;
     }
 

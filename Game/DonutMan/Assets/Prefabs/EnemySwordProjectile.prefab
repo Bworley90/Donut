@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7935720641418925764}
   - component: {fileID: 7935720641418925765}
-  - component: {fileID: 7935720641418925767}
   - component: {fileID: 5381341003020003625}
+  - component: {fileID: -5655422214341208545}
   m_Layer: 0
-  m_Name: SwordProjectile
-  m_TagString: Projectile
+  m_Name: EnemySwordProjectile
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -2938812757282903050, guid: 88ccd9a701c77e348849f2083d0a4b84,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,26 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7935720641418925767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7935720641418925786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37ea0dbaff13d5d4094242e4265d801f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pd: {fileID: 0}
-  damage: 1
-  lifeDuration: 3
-  speed: 15
-  leftFacing: {fileID: 1436844260768581581, guid: 88ccd9a701c77e348849f2083d0a4b84,
-    type: 3}
-  rightFacing: {fileID: -2938812757282903050, guid: 88ccd9a701c77e348849f2083d0a4b84,
-    type: 3}
 --- !u!61 &5381341003020003625
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -130,3 +110,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.7016649, y: 0.20263219}
   m_EdgeRadius: 0
+--- !u!114 &-5655422214341208545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7935720641418925786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7705b3256f875cb40961508b975e5dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0}
+  speed: 8
