@@ -12,6 +12,10 @@ public class CameraFollow : MonoBehaviour
     [Tooltip("Offset the camera follows the player")]
     [SerializeField]
     private Vector3 offset;
+
+    [Tooltip("Speed the camera follows the player")]
+    [SerializeField]
+    private float followSpeed;
     
 
     #endregion
@@ -21,7 +25,7 @@ public class CameraFollow : MonoBehaviour
     #region MonoBehavior Callbacks
     private void Update()
     {
-        transform.position = player.position - offset;
+        transform.position = new Vector3(Mathf.Lerp(transform.position.x, player.position.x + offset.x, followSpeed), transform.position.y, transform.position.z) ;
     }
 
     #endregion

@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    
+    [HideInInspector]
+    public PixelDonut pd;
+    public int damage;
+    public int lifeDuration;
+    public float speed;
+
 }
