@@ -53,13 +53,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private byte flourBagSpeed;
 
-    private enum PlayerState
+    public enum PlayerState
     {
         facedLeft,
         facedRight
     }
-
-    private PlayerState ps;
+    [HideInInspector]
+    public PlayerState ps;
 
     private void Start()
     {
