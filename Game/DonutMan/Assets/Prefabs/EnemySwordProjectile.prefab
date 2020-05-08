@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -5655422214341208545}
   m_Layer: 0
   m_Name: EnemySwordProjectile
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2938812757282903050, guid: 88ccd9a701c77e348849f2083d0a4b84,
     type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}

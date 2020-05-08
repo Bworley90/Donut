@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     [Tooltip("Max Speed player can go")]
     [SerializeField]
-    private float maxSpeed;
+    private float maxSpeed = 5;
 
     [Tooltip("Jumpheight for player")]
     [SerializeField]
@@ -29,27 +29,25 @@ public class PlayerMovement : MonoBehaviour
     
     [Tooltip("Place to check for ground collisions")]
     [SerializeField]
-    private Vector3 groundCheckPlacement;
+    private Vector3 groundCheckPlacement = Vector3.zero;
 
     [Tooltip("Size of the collision check")]
     [SerializeField]
-    private Vector3 groundCheckSize;
+    private Vector3 groundCheckSize = Vector3.zero;
 
     [Tooltip("Show the collision box for grounding")]
     [SerializeField]
-    private bool showGroundCheck;
+    private bool showGroundCheck = false;
 
     [Tooltip("Is the player grounded")]
-    [SerializeField]
-    private bool grounded;
+    public bool grounded = false;
 
     [SerializeField]
     Collider2D temp;
 
     #endregion
 
-    [SerializeField]
-    private GameObject flourBag;
+    public GameObject flourBag;
     [SerializeField]
     private byte flourBagSpeed;
 

@@ -11,8 +11,7 @@ public class Skeleton : Enemy
     private Vector2 velocity = Vector2.right;
     private bool edgeReached = false;
 
-    [SerializeField]
-    private GameObject deathParticleSystem;
+    public GameObject deathParticleSystem;
 
 
     [SerializeField]
@@ -21,8 +20,7 @@ public class Skeleton : Enemy
     [SerializeField]
     private int spottingDistance = 4;
 
-    [SerializeField]
-    private GameObject attackProjectile;
+    public GameObject attackProjectile;
 
 
 

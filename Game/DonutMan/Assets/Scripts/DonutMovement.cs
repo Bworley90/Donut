@@ -18,15 +18,16 @@ public class DonutMovement : MonoBehaviour
     #region Serializable Variables
     [Tooltip("Speed of the Character")]
     [SerializeField]
-    private byte speed;
-
+    private byte speed = 5;
+     /*
     [Tooltip("Max Speed of Character")]
     [SerializeField]
-    private byte maxSpeed;
+    private byte maxSpeed = 5;
 
     [Tooltip("Jump Height")]
     [SerializeField]
-    private byte jumpHeight;
+    private byte jumpHeight = 5;
+    */
 
     #endregion
 

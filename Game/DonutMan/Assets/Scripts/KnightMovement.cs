@@ -19,6 +19,12 @@ public class KnightMovement : MonoBehaviour
     private bool jumpReady = false;
     private bool doubleJumpReady = false;
 
+    public Vector3 rightOffset;
+    public Vector3 rightSize;
+    public Vector3 leftSize;
+    public Vector3 leftOffset;
+    
+
 
     
     public Vector2 offset = new Vector2(5, 5);
@@ -48,14 +54,16 @@ public class KnightMovement : MonoBehaviour
 
     private void HorizontalMovement()
     {
+        Collider2D rightbox = Physics2D.OverlapBox(transform.position + rightOffset, rightSize, 0f);
+        Collider2D leftbox = Physics2D.OverlapBox(transform.position + leftOffset, leftSize, 0f);
         direction = Vector2.zero;
-        if (Input.GetAxisRaw("Horizontal") > 0)
+        if (Input.GetAxisRaw("Horizontal") > 0 && rightbox == null)//This causes stutter movement when firing. 
         {
             direction = Vector2.right;
             facingDirection = FacingDirection.right;
 
         }
-        else if (Input.GetAxisRaw("Horizontal") < 0)
+        else if (Input.GetAxisRaw("Horizontal") < 0 && leftbox == null)
         {
             direction = Vector2.left;
             facingDirection = FacingDirection.left;
@@ -67,10 +75,15 @@ public class KnightMovement : MonoBehaviour
     private void Jump()
     {
         Collider2D grounded = Physics2D.OverlapBox((Vector2)transform.position + offset, size, 0f);
-        if(grounded != null)
+        if (grounded != null)
         {
-            doubleJumpReady = false;
-            jumpReady = true;      
+            if(grounded.gameObject.CompareTag("Collision"))
+            {
+                doubleJumpReady = false;
+                jumpReady = true;
+                Debug.Log("Here");
+            }
+                
         }
         if(jumpReady)
         {
@@ -101,6 +114,8 @@ public class KnightMovement : MonoBehaviour
         {
             Gizmos.color = Color.red;
             Gizmos.DrawCube((Vector2)transform.position + offset, size);
+            Gizmos.DrawCube(transform.position + rightOffset, rightSize);
+            Gizmos.DrawCube(transform.position + leftOffset, leftSize);
         }
         
     }

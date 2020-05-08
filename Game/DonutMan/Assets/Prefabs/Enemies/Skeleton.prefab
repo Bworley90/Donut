@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1351562110071085660}
   m_Layer: 0
   m_Name: Skeleton
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 5
   speed: 5
-  damageCooldown: 0.5
+  damageCooldown: 0.25
   deathParticleSystem: {fileID: 7099919092344722967, guid: e5ef820e388abc14a9f77e72a79f8534,
     type: 3}
   showGizmos: 1
